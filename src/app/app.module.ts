@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { TablaComponent } from './component/tabla/tabla.component';
 import {HttpClientModule} from '@angular/common/http';
 import {Ng2OrderModule} from 'ng2-order-pipe';
+import { BuscadorPipe } from './pipes/buscador.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
-    TablaComponent
+    TablaComponent,
+    BuscadorPipe
   ],
   imports: [
     BrowserModule,

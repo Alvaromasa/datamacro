@@ -1,27 +1,54 @@
-<select class="form-select">
-  <option>Select HS</option>
+<select   >
+    
+    <option>Select Country</option>  
   </select>
-<select class="form-select">
+<select class="selectcount">
     <option>Select Country</option>
 </select>
+<select class="selectHS">
+    <option>Select HS</option>
+    </select>
+  <select class="selectcount">
+      <option>Select fechainit</option>
+  </select>
+  <select class="selectHS">
+    <option>Select fechaend</option>
+    </select>
+  <select class="selectcount">
+      <option>Select región</option>
+  </select>
 
 <table class="table table-bordered ">
     <thead class="headert">
-      <tr>
-        <th (click)="sort('provincia')">provincia&nbsp;<i class="fa fa-sort"></i></th>
-        <th (click)="sort('ano')">año&nbsp;<i class="fa fa-sort"></i></th>
-        <th (click)="sort('euros')">euros(€)&nbsp;<i class="fa fa-sort"></i></th>
-        <th (click)="sort('dolares')">dolares($)&nbsp;<i class="fa fa-sort"></i></th>
-        <th (click)="sort('kilogramos')">kilogramos&nbsp;<i class="fa fa-sort"></i></th>
-      </tr>
+        <tr>
+            <th scope="col" class="buscaorigen">
+                <input placeholder="busca provincia"
+                (keyup)="beginSearch($event)"
+                [(ngModel)]="origenSearch">
+            </th>
+            <th scope="col" class="buscamercado">
+                <input 
+                placeholder="Busca fecha"
+                (keyup)="beginSearch($event)"
+                [(ngModel)]="idSearch">
+            </th>
+    
+          </tr>
+        <tr>
+            <th (click)="sort('provincia')">provincia&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('ano')">fecha&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('euros')">euros(€)&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('dolares')">dolares($)&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('kilogramos')">kilogramos&nbsp;<i class="fa fa-sort"></i></th>
+          </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let imp of imports | orderBy: key: reverse">
-        <td>{{imp.provincia}}</td>
-        <td>{{imp.ano}}</td>
-        <td>{{imp.euros}}</td>
-        <td>{{imp.dolares}}</td>
-        <td>{{imp.kilogramos}}</td>
+      <tr *ngFor="let post of resultfiltro | orderBy: key: reverse">
+        <td>{{post.provincia}}</td>
+        <td>{{post.ano}}</td>
+        <td>{{post.euros}}</td>
+        <td>{{post.dolares}}</td>
+        <td>{{post.kilogramos}}</td>
       </tr>
 
     </tbody>

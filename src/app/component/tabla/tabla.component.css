@@ -1,9 +1,16 @@
 table{
-    margin-top: 400px;
+    margin-top: 25px;
     color: white;
+    width: 100%;
 }
 
 .headert{
     background-color: #202837;
 
+}
+select{
+   
+    margin-top: 20px;
+    width: 16.66666%;
+    height: 35px;
 }
